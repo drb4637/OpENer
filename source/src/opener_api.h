@@ -13,7 +13,9 @@
 #include "ciptypes.h"
 #include "ciperror.h"
 
-#if defined(STM32)	/** STM32 target -> uses a struct for the network interface */
+#if defined(STM32_NETX)
+#define TcpIpInterface NX_INTERFACE
+#elif defined(STM32)	/** STM32 target -> uses a struct for the network interface */
 #define TcpIpInterface struct netif
 #else		/** other targets -> string for the network interface */
 #define TcpIpInterface const char

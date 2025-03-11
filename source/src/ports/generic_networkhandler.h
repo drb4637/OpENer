@@ -17,7 +17,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#if !defined(STM32)	/** Not STM32 target */
+
+#if defined(STM32_NETX)
+#elif !defined(STM32)	/** Not STM32 target */
 #include <errno.h>
 #else	/** STM32 target (GCC), lwip has its own error code list */
 #include "lwip/errno.h"
