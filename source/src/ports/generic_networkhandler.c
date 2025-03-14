@@ -54,6 +54,8 @@
   "MSG_NOSIGNAL not defined. Check if your system stops on SIGPIPE, as this can happen with the send() function"
 #if defined(_WIN32)
 #pragma message(MSG_NOSIGNAL_PRAGMA_MESSAGE)
+#elif defined(STM32_NETX)
+#pragma message(MSG_NOSIGNAL_PRAGMA_MESSAGE)
 #else
 #pragma GCC warning MSG_NOSIGNAL_PRAGMA_MESSAGE
 #endif /* defined(_WIN32) */
